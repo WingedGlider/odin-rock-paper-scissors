@@ -33,7 +33,7 @@ function checkOutcome(comp, user){
 function playGame(){
     for(let i = 1; i <= 5; i++){
         if (i == 1) playerChoice = prompt("Hello, user! Rock, Paper, or Scissors?").toLowerCase();
-        else playerChoice = prompt("Round " +i+ ", Rock, Paper, or Scissors?");
+        else playerChoice = prompt("Round " +i+ ", Rock, Paper, or Scissors?").toLowerCase();
         playerChoice = evalPlayerChoice(playerChoice);
         alert("You chose " +playerChoice.toLowerCase()+"!");
         let compChoice = getComputerChoice();
