@@ -43,5 +43,5 @@ function playGame(){
     alert("Game over, check the console for results!");
     if (compScore == userScore) console.log("Game ended with a tie.");
     else if (compScore < userScore) console.log ("Game ended in favor of player, " +userScore+ " to " +compScore+".");
-    else ("Game ended in favor of computer, " +userScore+ " to " +compScore+".");
+    else console.log("Game ended in favor of computer, " +userScore+ " to " +compScore+".");
 }
