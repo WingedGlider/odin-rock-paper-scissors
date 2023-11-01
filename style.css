@@ -2,4 +2,83 @@ body, html{
     height: 100%;
     width: 99%;
     background-image: linear-gradient(rgb(89, 87, 94), rgb(55, 56, 63) ,rgb(25, 25, 27));
+    color: rgb(175, 191, 226);
+    background-repeat: no-repeat;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    justify-content: flex-start;
+    margin: 0px;
+
+}
+
+img{
+    width: 60%;
+    margin-bottom: 8px;
+}
+
+span{
+    font-weight: 700;
+    font-size: larger;
+    margin-bottom: 8px;
+    color: black;
+}
+
+h1{
+    font-size: 3rem;
+}
+
+h3{
+    margin: 0px;
+}
+
+.bottom-row{
+    display: flex;
+    gap: 240px;
+    align-items: center;
+    justify-content: center;
+}
+
+.win-text{
+    margin-top: 20px;
+}
+.score{
+    min-width: 150px;
+    min-height: 150px;
+    font-size: 2.3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.start{
+    height: 30px;
+    width: 100px;
+    background-color: rgb(193, 198, 207);
+    border: 5px solid rgb(135, 133, 153);
+    border-radius: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+}
+
+.rock, .paper, .scissors{
+    min-height: 150px;
+    width: 130px;
+    background-color: rgb(193, 198, 207);
+    border: 5px solid rgb(135, 133, 153);
+    border-radius: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+    gap: 5px;
 }
