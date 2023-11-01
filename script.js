@@ -3,7 +3,7 @@ let compScore = 0;
 let playerChoice = null;
 playGame();
 
-function evalPlayerChoice(choice){
+function evalPlayerChoice(choice){/*Unnecessary function, text input no longer requested*/
     if ( !( choice == "scissors" || choice == "rock" || choice == "paper")){
     choice = prompt("Not a valid input... Please enter: Rock, Paper, or Scissors?");
     choice = evalPlayerChoice(choice);
@@ -11,17 +11,17 @@ function evalPlayerChoice(choice){
     return choice;
 }
 
-function getComputerChoice(){
+function getComputerChoice(){/*this is fine*/
     let choice = Math.floor(Math.random()*3);
     if (choice == 0) return "rock";
     if (choice == 1) return "paper";
     else return "scissors";
 }
 
-function checkOutcome(comp, user){
+function checkOutcome(comp, user){/*place alerts in dom objects*/ 
     if (comp == user) alert("Neither wins, it's a draw!");
     else if ((user == "rock" && comp == "scissors") || (user == "scissors" && comp == "paper") || (user == "paper" && comp == "rock")){
-        alert ("You win, " +user+ " beats " +comp+ "!");
+        alert ("You win, " +user+ " beats " +comp+ "!"); 
         userScore++;
     }else{
         alert ("You lose, " +user+ " loses to " +comp+ "!");
@@ -30,18 +30,16 @@ function checkOutcome(comp, user){
     alert ("The score is "+userScore+" to " +compScore+ "!");
 }
 
-function playGame(){
-    for(let i = 1; i <= 5; i++){
-        if (i == 1) playerChoice = prompt("Hello, user! Rock, Paper, or Scissors?").toLowerCase();
-        else playerChoice = prompt("Round " +i+ ", Rock, Paper, or Scissors?").toLowerCase();
+function playGame(){/*remove code that produces alerts and switch to dom objects, input should be created with buttons and converted to text for comparisons*/ 
+        prompt("Hello, user! Rock, Paper, or Scissors?").toLowerCase();
+        playerChoice = prompt("Round " +i+ ", Rock, Paper, or Scissors?").toLowerCase();
         playerChoice = evalPlayerChoice(playerChoice);
         alert("You chose " +playerChoice.toLowerCase()+"!");
         let compChoice = getComputerChoice();
         alert("Your opponent chose " +compChoice.toLowerCase()+"!");
         checkOutcome(compChoice,playerChoice);
+        alert("Game over, check the console for results!");
+        if (compScore == userScore) console.log("Game ended with a tie.");
+        else if (compScore < userScore) console.log ("Game ended in favor of player, " +userScore+ " to " +compScore+".");
+        else console.log("Game ended in favor of computer, " +userScore+ " to " +compScore+".");
     }
-    alert("Game over, check the console for results!");
-    if (compScore == userScore) console.log("Game ended with a tie.");
-    else if (compScore < userScore) console.log ("Game ended in favor of player, " +userScore+ " to " +compScore+".");
-    else console.log("Game ended in favor of computer, " +userScore+ " to " +compScore+".");
-}
